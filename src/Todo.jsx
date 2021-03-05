@@ -1,12 +1,12 @@
 const Todo = ({ todos, handleComplete, handleRemove }) => {
   return (
     <div className="todos">
-      {todos.map(({ title, id }, index) => (
+      {todos.map(({ title, id, hasCompleted }, index) => (
         <div key={index} className="todo flex">
+          {hasCompleted ? <span className="line"></span> : ""}
           <p>
             <span>{index + 1}</span>&nbsp;&nbsp;{title}
           </p>
-
           <div className="buttons">
             <i
               onClick={handleComplete}

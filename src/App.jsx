@@ -10,25 +10,7 @@ const App = () => {
     hasCompleted: false,
   });
 
-  const [todos, setTodos] = useState([
-    {
-      id: 4,
-      title: "Hello World ",
-      hasCompleted: false,
-    },
-
-    {
-      id: 8,
-      title: "Jai Shree Ram ",
-      hasCompleted: false,
-    },
-
-    {
-      id: 87,
-      title: "Jai Hind",
-      hasCompleted: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const handleRemove = (e) => {
     const { id } = e.target;
@@ -50,10 +32,19 @@ const App = () => {
     setTodo({ hasCompleted: false, title: value.trim() });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTodos([...todos, { ...todo, id: Math.floor(Math.random() * 100) }]);
-    e.target[0].value = "";
+    if (todo.title !== "" && todo.title !== null) {
+      setTodos([...todos, { ...todo, id: Math.floor(Math.random() * 100) }]);
+      e.target[0].value = "";
+      setTodo({
+        id: 0,
+        title: "",
+        hasCompleted: false,
+      });
+    } else {
+      alert("Write Something");
+    }
   };
 
   return (

@@ -86,6 +86,7 @@ header {
   border-radius: 5px;
   border: 0.1px solid #999;
   margin-bottom: 10px;
+  position: relative;
 }
 .todo p {
   color: #433;
@@ -134,4 +135,10 @@ input[type="submit"] {
   border-bottom-right-radius: 10px;
   cursor: pointer;
   padding: 5px 0px;
+}
+.line {
+  width: 70%;
+  position: absolute;
+  height: 2px;
+  background-color: black;
 }
