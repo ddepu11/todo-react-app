@@ -11,12 +11,12 @@ const Todo = ({ todos, handleComplete, handleRemove }) => {
             <i
               onClick={handleComplete}
               id={id}
-              className="fas fa-check fa-1x"
+              className="fas fa-check fa-2x"
             ></i>
             <i
               onClick={handleRemove}
               id={id}
-              className="fas fa-times fa-1x"
+              className="fas fa-times fa-2x"
             ></i>
           </div>
         </div>
