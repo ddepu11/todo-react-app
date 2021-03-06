@@ -166,7 +166,8 @@ input[type="submit"] {
   }
   input[type="submit"] {
     font-size: 0.9em;
-    padding: 12.5px 0px;
+    padding: 10.5px 0px;
+    transform: translateY(-2.5px);
   }
   .todo {
     max-width: 98%;
