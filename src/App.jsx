@@ -139,6 +139,8 @@ const App = () => {
         handleComplete={handleComplete}
         handleRemove={handleRemove}
       />
+
+      <button className="clear">Remove All</button>
     </div>
   );
 };
