@@ -8,15 +8,16 @@ const Todo = ({ todos, handleComplete, handleRemove }) => {
             <span>{index + 1}</span>&nbsp;&nbsp;{title}
           </p>
           <div className="buttons">
+            <i class="fas fa-pencil-alt fa-1x edit"></i>
             <i
               onClick={handleComplete}
               id={id}
-              className="fas fa-check fa-2x"
+              className="fas fa-check fa-1x completed"
             ></i>
             <i
               onClick={handleRemove}
               id={id}
-              className="fas fa-times fa-2x"
+              className="fas fa-times fa-1x delete"
             ></i>
           </div>
         </div>

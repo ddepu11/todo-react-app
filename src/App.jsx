@@ -13,6 +13,7 @@ const App = () => {
   const [alert, setAlert] = useState({ show: false, msg: "", styleClass: "" });
 
   const [todos, setTodos] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
 
   const showAlert = (message, classToAdd) => {
     setAlert({ show: true, msg: message, styleClass: classToAdd });
@@ -21,7 +22,7 @@ const App = () => {
   const handleRemove = (e) => {
     const { id } = e.target;
     setTodos(todos.filter((todo) => todo.id !== +id));
-    showAlert("Successfully Deleted !!", "success");
+    showAlert("Successfully Deleted a todo !!", "success");
   };
 
   const handleComplete = async (e) => {
@@ -38,10 +39,6 @@ const App = () => {
         } else {
           return todo;
         }
-
-        // return todo.id === +id
-        //   ? { ...todo, hasCompleted: !todo.hasCompleted }
-        //   : todo;
       })
     );
   };
@@ -51,7 +48,7 @@ const App = () => {
     setTodo({ hasCompleted: false, title: value.trim() });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (todo.title !== "" && todo.title !== null) {
       setTodos([...todos, { ...todo, id: Math.floor(Math.random() * 100) }]);
