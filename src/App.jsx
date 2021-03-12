@@ -4,6 +4,7 @@ import Todos from "./Todo";
 import Main from "./Main";
 import Alert from "./Alert";
 
+// Fetching Todos from Local Storage(Chrome Browser's)
 const getTodosFromLocalStorage = () => {
   if (
     localStorage.getItem("todos") !== null &&
@@ -28,6 +29,7 @@ const App = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [toEditTodoId, setToEditTodoId] = useState(null);
 
+  // Saving Todos in Local Storage whenever todos array changes
   useEffect(() => localStorage.setItem("todos", JSON.stringify(todos)), [
     todos,
   ]);
@@ -78,7 +80,7 @@ const App = () => {
     setTodo({ hasCompleted: false, title: value });
   };
 
-  // Saving a todo
+  // Saving or updating  todo
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -129,7 +131,7 @@ const App = () => {
         value={todo.title}
         handleInput={handleInput}
       />
-      {alert.show ? <Alert {...alert} setAlert={setAlert} /> : ""}
+      {alert.show ? <Alert setAlert={setAlert} alert={alert} /> : ""}
 
       <Todos
         todos={todos}

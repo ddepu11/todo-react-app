@@ -1,10 +1,17 @@
 import { useEffect } from "react";
 
-const Alert = ({ msg, styleClass, setAlert }) => {
+const Alert = ({ alert, setAlert }) => {
+  const { msg, styleClass } = alert;
+
   useEffect(() => {
-    setTimeout(() => setAlert({ show: false, msg: "", styleClass: "" }), 3000);
-  }, []);
-  
+    const removeAlert = setTimeout(
+      () => setAlert({ show: false, msg: "", styleClass: "" }),
+      3000
+    );
+
+    return () => clearTimeout(removeAlert);
+  }, [alert]);
+
   return (
     <div className={styleClass ? `alert ${styleClass}` : "alert"}>
       <h6>{msg}</h6>
