@@ -140,15 +140,19 @@ const App = () => {
         handleRemove={handleRemove}
       />
 
-      <button
-        className="clear"
-        onClick={() => {
-          setTodos([]);
-          showAlert("Deleted All the todos!!", "success");
-        }}
-      >
-        Remove All
-      </button>
+      {todos.length === 0 ? (
+        ""
+      ) : (
+        <button
+          className="clear"
+          onClick={() => {
+            setTodos([]);
+            showAlert("Deleted All the todos!!", "success");
+          }}
+        >
+          Remove All
+        </button>
+      )}
     </div>
   );
 };
