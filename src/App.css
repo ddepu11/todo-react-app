@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
 /*Utility class*/
 .flex {
@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 body {
   min-height: 100vh;
@@ -58,7 +58,7 @@ ul {
   list-style-type: none;
 }
 header h4 {
-  font-size: 2.8em;
+  font-size: 1.8em;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #111;
@@ -68,7 +68,7 @@ header {
   margin-bottom: 15px;
 }
 .todos {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .todo {
@@ -83,7 +83,7 @@ header {
     #bdfaf4,
     #b5f5ff
   );
-  padding: 8px 20px;
+  padding: 0px 12px;
   border-radius: 25px;
   border: 0.1px solid #999;
   margin-bottom: 12px;
@@ -92,7 +92,7 @@ header {
 .todo p {
   color: #433;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1em;
   letter-spacing: 0.5px;
 }
 
@@ -107,11 +107,12 @@ header {
 
 i {
   transition: all 0.4s ease-in-out;
+  transform: scale(0.8);
 }
 
 i:hover {
   cursor: pointer;
-  transform: scale(1.3) translateY(-3px);
+  transform: scale(1.05) translateY(-3px);
 }
 main {
   max-width: 95%;
@@ -120,7 +121,7 @@ main {
 
 input {
   border: 0;
-  padding: 15px 30px;
+  padding: 5px 14px;
 }
 input:focus {
   outline: 0;
@@ -128,20 +129,21 @@ input:focus {
 
 input[type="text"] {
   width: 80%;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
 
 input[type="submit"] {
   width: 20%;
-  font-size: 1.5em;
+  font-size: 0.9em;
   font-weight: bold;
   color: #333;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   cursor: pointer;
-  padding: 15px 0px;
+  padding: 8.5px 0px;
+  transform: translateY(-2.2px);
 }
 
 .line {
@@ -178,4 +180,21 @@ input[type="submit"] {
   .todo p {
     font-size: 1.1em;
   }
+}
+.alert {
+  text-align: center;
+  margin: 15px;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 5px;
+}
+.error {
+  color: #363636;
+  background: #ffb7b7;
+}
+.success {
+  color: #363636;
+  background: #b7ffc7;
 }
