@@ -1,4 +1,4 @@
-const Todo = ({ todos, handleComplete, handleRemove }) => {
+const Todo = ({ todos, handleComplete, handleRemove, handleEdit }) => {
   return (
     <div className="todos">
       {todos.map(({ title, id, hasCompleted }, index) => (
@@ -8,7 +8,11 @@ const Todo = ({ todos, handleComplete, handleRemove }) => {
             <span>{index + 1}</span>&nbsp;&nbsp;{title}
           </p>
           <div className="buttons">
-            <i class="fas fa-pencil-alt fa-1x edit"></i>
+            <i
+              onClick={handleEdit}
+              id={id}
+              className="fas fa-pencil-alt fa-1x edit"
+            ></i>
             <i
               onClick={handleComplete}
               id={id}
