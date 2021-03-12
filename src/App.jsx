@@ -140,7 +140,15 @@ const App = () => {
         handleRemove={handleRemove}
       />
 
-      <button className="clear">Remove All</button>
+      <button
+        className="clear"
+        onClick={() => {
+          setTodos([]);
+          showAlert("Deleted All the todos!!", "success");
+        }}
+      >
+        Remove All
+      </button>
     </div>
   );
 };
